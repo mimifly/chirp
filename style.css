@@ -4,6 +4,8 @@
 
   --clr-primary: #dd2e44;
   --clr-btn-fade: hsl(352, 82%, 85%);
+  --clr-btn-hover: hsl(351.8, 65.4%, 37.5%);
+  --clr-btn-pressed: hsl(351.9, 64.9%, 22.4%);
 }
 
 * {
@@ -16,8 +18,28 @@ li {
   list-style-type: none;
 }
 
+body {
+  font-family: var(--font-main);
+}
+
+nav {
+  background-color: white;
+  width: 628px;
+  margin-left: auto;
+  margin-right: auto;
+  position: fixed;
+  padding: 0.5em 0.25em;
+  border-bottom: var(--border);
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  margin: 0 0.75em;
+}
 .column {
-  width: 95%;
   max-width: 630px;
   margin-left: auto;
   margin-right: auto;
@@ -26,13 +48,14 @@ li {
 }
 
 .icon {
-  height: 50px;
-  width: 50px;
+  height: 48px;
+  width: 48px;
   background-image: url(images/chirp-icon.svg);
   background-size: cover;
 }
 
 form {
+  padding-top: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -74,27 +97,20 @@ button {
 
 .active {
   background-color: var(--clr-primary);
+  cursor: pointer;
+}
+
+.active:hover,
+.active:focus {
+  background-color: var(--clr-btn-hover);
+}
+
+.active:active {
+  background-color: var(--clr-btn-pressed);
 }
 
 textarea:focus {
   outline: none;
-}
-
-body {
-  font-family: var(--font-main);
-}
-
-nav {
-  padding: 1em 0.5em;
-  border-bottom: var(--border);
-}
-
-nav ul {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-weight: bold;
-  margin: 0 0.75em;
 }
 
 .separator {
@@ -104,9 +120,11 @@ nav ul {
 
 .chirps {
   width: 100%;
+  margin-bottom: 1em;
 }
 
 .chirps li {
+  font-size: 0.9rem;
   border-bottom: var(--border);
   border-top: var(--border);
   padding: 1em 2em;
