@@ -71,5 +71,6 @@ chirpsStorage.on("value", (snapshot) => {
     }
   }
   textarea.value = "";
+  limitDisplay.innerHTML = "";
   button.classList.remove("active");
 });
