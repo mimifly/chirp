@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/images/favicon.ico?" rel="icon" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Chirp</title>
+  </head>
+  <body>
+    <div class="column">
+      <nav>
+        <ul>
+          <li>
+            <a href="./"><div class="icon"></div></a>
+          </li>
+          <li></li>
+        </ul>
+      </nav>
+      <form action="">
+        <textarea
+          name="input-area"
+          id="input-area"
+          placeholder="What&rsquo;s happening?"
+        ></textarea>
+        <button class="submit">Chirp</button>
+      </form>
+      <div class="separator"></div>
+
+      <ul class="chirps"></ul>
+    </div>
+    <!-- END OF COLUMN TAG -->
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+    <script>
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      var firebaseConfig = {
+        apiKey: "AIzaSyAF_izNtC5OTEzi8e1cBcfwA2CG4erZVoE",
+        authDomain: "chirp-e7306.firebaseapp.com",
+        databaseURL:
+          "https://chirp-e7306-default-rtdb.europe-west1.firebasedatabase.app",
+        projectId: "chirp-e7306",
+        storageBucket: "chirp-e7306.appspot.com",
+        messagingSenderId: "769104742109",
+        appId: "1:769104742109:web:59d0cb3d176580a7573d34",
+        measurementId: "G-W3Q3HJH10F",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
+    <script src="chirp.js"></script>
+  </body>
+</html>
