@@ -152,3 +152,14 @@ textarea:focus {
 .message {
   margin: 1em 0;
 }
+
+@media only screen and (max-width: 650px) {
+  .column {
+    width: 96%;
+  }
+
+  nav {
+    width: 96%;
+    margin: auto;
+  }
+}
