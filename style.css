@@ -134,12 +134,14 @@ textarea:focus {
 }
 
 .chirps li {
+  word-wrap: break-word;
   background-color: white;
   font-size: 0.9rem;
   border: var(--border);
   padding: 1em 2em;
   border-radius: 1.5em 1.5em 1.5em 0;
   margin: 1.25em 0;
+  overflow: hidden;
 }
 
 .time {
