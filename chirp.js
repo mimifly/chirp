@@ -4,8 +4,10 @@ const textarea = document.querySelector("textarea");
 const form = document.querySelector("form");
 const chirps = document.querySelector(".chirps");
 const button = document.querySelector(".submit");
+const limitDisplay = document.querySelector(".limit");
 const isblank = /[^\s]/;
 const dayInUnix = 86400000;
+const characterLimit = 250;
 let lastStamp = 0;
 let chirpsArray = [];
 
@@ -24,17 +26,23 @@ function elapsedUnix(u) {
 textarea.addEventListener("input", (event) => {
   textarea.style.height = textarea.style.minHeight;
   textarea.style.height = event.target.scrollHeight + 1 + "px"; // + 1to escape scrollbar
-
+  const characterCount = textarea.value.length;
   if (!isblank.test(textarea.value)) {
     button.classList.remove("active");
+    limitDisplay.innerHTML = "";
+  } else if (characterCount > characterLimit) {
+    button.classList.remove("active");
+    limitDisplay.innerHTML = `<span class="maxed">${characterCount} of ${characterLimit} characters</span>`;
   } else {
     button.classList.add("active");
+    limitDisplay.innerHTML = `${characterCount} of ${characterLimit} characters`;
   }
 });
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
-  if (!isblank.test(textarea.value)) return;
+  if (!isblank.test(textarea.value) || textarea.value.length > characterLimit)
+    return;
   const time = new Date().valueOf();
   database.ref("chirps/" + `${time}/`).set(textarea.value);
 });
