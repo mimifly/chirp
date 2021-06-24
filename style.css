@@ -6,6 +6,8 @@
   --clr-btn-fade: hsl(352, 82%, 85%);
   --clr-btn-hover: hsl(351.8, 65.4%, 37.5%);
   --clr-btn-pressed: hsl(351.9, 64.9%, 22.4%);
+
+  background-color: rgb(252, 252, 252);
 }
 
 * {
@@ -24,12 +26,12 @@ body {
 
 nav {
   background-color: white;
-  width: 628px;
+  width: 630px;
   margin-left: auto;
   margin-right: auto;
   position: fixed;
   padding: 0.5em 0.25em;
-  border-bottom: var(--border);
+  border: var(--border);
 }
 
 nav ul {
@@ -43,8 +45,6 @@ nav ul {
   max-width: 630px;
   margin-left: auto;
   margin-right: auto;
-  border-left: var(--border);
-  border-right: var(--border);
 }
 
 .icon {
@@ -55,11 +55,12 @@ nav ul {
 }
 
 form {
+  background-color: white;
   padding-top: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-bottom: var(--border);
+  border: var(--border);
 }
 
 textarea {
@@ -113,19 +114,25 @@ textarea:focus {
   outline: none;
 }
 
-.separator {
-  height: 0.65em;
-  background-color: hsla(352, 65%, 22%, 0.05);
-}
-
 .chirps {
   width: 100%;
   margin-bottom: 1em;
 }
 
 .chirps li {
+  background-color: white;
   font-size: 0.9rem;
-  border-bottom: var(--border);
-  border-top: var(--border);
+  border: var(--border);
   padding: 1em 2em;
+  border-radius: 1.5em 1.5em 1.5em 0;
+  margin: 1rem 0;
+}
+
+.time {
+  color: gray;
+  font-weight: 300;
+  font-size: 0.75rem;
+}
+.message {
+  margin: 1em 0;
 }
